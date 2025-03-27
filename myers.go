@@ -132,11 +132,9 @@ func min(x, y int) int {
  * e.g -1%3 = 2.
  * In golang it matches the sign of the numerator.
  * See https://en.wikipedia.org/wiki/Modulo_operation#Variants_of_the_definition
- * Since we always have a positive denominator here, we can emulate the
- * pyMod x%y as (x+y) % y
  */
 func pyMod(x, y int) int {
-	return (x + y) % y
+	return (x%y + y) % y
 }
 
 // Let us map element in same way as in
